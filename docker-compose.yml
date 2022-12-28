@@ -58,6 +58,8 @@ services:
       - MYSQL_DATABASE=${MYSQL_DATABASE}
       - MYSQL_USER=${MYSQL_USER}
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    volumes:
+      - "./.docker/mysql:/var/lib/mysql"
     restart: always
 
   phpmyadmin:
@@ -72,8 +74,6 @@ services:
     environment:
       - PMA_ARBITRARY=1
       - PMA_HOST=mysql
-    volumes:
-      - "./.docker/mysql:/var/lib/mysql"
     depends_on:
       - mysql
     restart: always
