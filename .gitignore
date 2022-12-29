@@ -44,3 +44,6 @@ phpunit.phar
 
 # Docker file
 /.docker/mysql
+
+# Frontend Public
+/frontend/web/public
