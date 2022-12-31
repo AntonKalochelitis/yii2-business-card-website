@@ -18,8 +18,8 @@
         "yiisoft/yii2": "~2.0.45",
         "yiisoft/yii2-bootstrap5": "~2.0.2",
         "yiisoft/yii2-symfonymailer": "~2.0.3",
-        "yiithings/yii2-dotenv": "dev-master",
-	    "himiklab/yii2-recaptcha-widget" : "*",
+        "yiithings/yii2-dotenv": ">=1.0.0",
+        "himiklab/yii2-recaptcha-widget" : "*",
         "kartik-v/yii2-krajee-base": "*",
         "kartik-v/yii2-widget-activeform": "*",
         "kartik-v/yii2-widget-affix": "*",
@@ -38,7 +38,9 @@
         "kartik-v/yii2-widget-switchinput": "*",
         "kartik-v/yii2-widget-timepicker": "*",
         "kartik-v/yii2-widget-touchspin": "*",
-        "kartik-v/yii2-widget-typeahead": "*"
+        "kartik-v/yii2-widget-typeahead": "*",
+        "nodge/yii2-eauth": "~2.0",
+        "yii2mod/yii2-rbac": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

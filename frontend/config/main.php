@@ -36,14 +36,11 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        /*
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-            'rules' => [
-            ],
+            'rules' => require(__DIR__ . DIRECTORY_SEPARATOR . 'rules-routes.php'),
         ],
-        */
     ],
     'params' => $params,
 ];

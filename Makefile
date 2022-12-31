@@ -5,6 +5,7 @@ up:
 		--env-file=.env.local \
 		up -d --build --remove-orphans
 	docker exec -t anton-kalochelitis-frontend-yii2 bash -c '/app/init --env=Development --overwrite=y'
+	docker exec -t anton-kalochelitis-frontend-yii2 bash -c 'composer install'
 	docker exec -t anton-kalochelitis-frontend-yii2 bash -c '/app/yii cache/flush-all'
 	sleep 60
 	docker exec -t anton-kalochelitis-frontend-yii2 bash -c '/app/yii migrate --interactive=0'
@@ -17,6 +18,7 @@ prod:
 		--env-file=./.env.prod \
 		up -d --build --remove-orphans
 	docker exec -t anton-kalochelitis-frontend-yii2 bash -c '/app/init --env=Production --overwrite=y'
+	docker exec -t anton-kalochelitis-frontend-yii2 bash -c 'composer install'
 	docker exec -t anton-kalochelitis-frontend-yii2 bash -c '/app/yii cache/flush-all'
 	sleep 60
 	docker exec -t anton-kalochelitis-frontend-yii2 bash -c '/app/yii migrate --interactive=0'

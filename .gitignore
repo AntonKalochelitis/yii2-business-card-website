@@ -1,3 +1,8 @@
+# Env file
+/.env.local
+/.env.prod
+/.env.preprod
+
 # yii console commands
 /yii
 /yii_test
