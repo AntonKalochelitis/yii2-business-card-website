@@ -1,4 +1,5 @@
 up:
+	mkdir -p ./.docker/mysql
 	docker network create anton-kalochelitis-network || docker-compose \
 		-f docker-compose.yml \
 		--env-file=.env.local \
@@ -10,6 +11,7 @@ up:
 	#docker exec -t anton-kalochelitis-frontend-yii2 bash -c '/app/yii_test migrate --interactive=0'
 
 prod:
+	mkdir -p ./.docker/mysql
 	docker network create anton-kalochelitis-network || docker-compose \
 		-f ./docker-compose.yml \
 		--env-file=./.env.prod \
