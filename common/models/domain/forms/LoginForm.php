@@ -1,21 +1,17 @@
 <?php
 
-namespace common\models;
-
-use Yii;
-use yii\base\Model;
+namespace common\models\domain\forms;
 
 /**
  * Login form
  */
-class LoginForm extends Model
+class LoginForm extends \yii\base\Model
 {
-    public $username;
-    public $password;
-    public $rememberMe = true;
+    public string $username;
+    public string $password;
+    public bool $rememberMe = true;
 
     private $_user;
-
 
     /**
      * {@inheritdoc}
@@ -39,7 +35,7 @@ class LoginForm extends Model
      * @param string $attribute the attribute currently being validated
      * @param array $params the additional name-value pairs given in the rule
      */
-    public function validatePassword($attribute, $params)
+    public function validatePassword(string $attribute, array $params)
     {
         if (!$this->hasErrors()) {
             $user = $this->getUser();
@@ -54,12 +50,12 @@ class LoginForm extends Model
      *
      * @return bool whether the user is logged in successfully
      */
-    public function login()
+    public function login(): bool
     {
         if ($this->validate()) {
-            return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600 * 24 * 30 : 0);
+            return \Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600 * 24 * 30 : 0);
         }
-        
+
         return false;
     }
 
